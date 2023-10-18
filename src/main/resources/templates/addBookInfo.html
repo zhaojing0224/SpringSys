@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Book Info</title>
+</head>
+
+<body>
+	<p>
+		<span th:text="${addBook}">書籍情報の新規</span>
+	</p>
+
+	<form th:action="@{/addBookInfo}" method="post" th:object="${addBookInfo}">
+		Title: <input type="text" th:field="*{title}" /><br />
+		Author: <input type="text" th:field="*{author}" /><br />
+		Genre: <input type="text" th:field="*{genre}" /><br />
+		Publication Date: <input type="text" th:field="*{publicationDate}" /><br />
+
+		<button type="submit">保存</button>
+	</form>
+
+</body>
+
+</html>
